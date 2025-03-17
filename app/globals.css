@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-serif: var(--font-merriweather);
+  --font-sans: var(--font-source-sans);
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-serif);
+}
+
+@layer base {
+  h1 {
+    @apply text-2xl md:text-4xl font-bold;
+  }
+  h2 {
+    @apply text-xl md:text-3xl font-bold;
+  }
+  h3 {
+    @apply text-lg md:text-2xl font-bold;
+  }
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .font-serif {
+    @apply tracking-tight;
+  }
+
+  /* Make news more visible on mobile */
+  article h3 {
+    @apply text-xl leading-tight;
+  }
+
+  article p {
+    @apply text-base;
+  }
+
+  /* Increase tap target sizes */
+  button,
+  a {
+    @apply py-2;
+  }
+
+  /* Improve readability */
+  .text-gray-700 {
+    @apply text-gray-900;
+  }
+
+  /* Make images more prominent */
+  .featured-image {
+    height: 300px !important;
+  }
+
+  article .relative {
+    height: 240px !important;
+    margin-bottom: 1rem;
+    @apply mb-4;
+  }
+
+  .opinion-image {
+    height: 180px !important;
+  }
+}
+
+/* Prose styles for article content */
+.prose {
+  @apply max-w-none;
+}
+
+.prose p {
+  @apply my-4;
+}
+
+.prose h2 {
+  @apply text-2xl font-bold mt-8 mb-4 font-serif text-blue-800;
+}
+
+.prose h3 {
+  @apply text-xl font-bold mt-6 mb-3 font-serif text-blue-700;
+}
+
+.prose ul,
+.prose ol {
+  @apply my-4 pl-6;
+}
+
+.prose li {
+  @apply mb-2;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-blue-300 pl-4 italic my-4 bg-blue-50 py-2 pr-2 rounded-r;
+}
+
+.prose a {
+  @apply text-blue-600 hover:text-blue-800 underline;
+}
+
+/* Transitions and animations */
+.custom-transition {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+/* Card hover effects */
+.hover-card {
+  @apply transition-all hover:shadow-lg hover:-translate-y-1;
+}
+
